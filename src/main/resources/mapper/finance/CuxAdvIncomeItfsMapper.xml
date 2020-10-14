@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.momo.finance.mapper.CuxAdvIncomeItfsMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.momo.finance.entity.CuxAdvIncomeItfs">
+        <result column="DATA_ID" property="dataId" />
+        <result column="SOURCE_CODE" property="sourceCode" />
+        <result column="SOURCE_NAME" property="sourceName" />
+        <result column="GAAP_CODE" property="gaapCode" />
+        <result column="ENTITY_CODE" property="entityCode" />
+        <result column="ENTITY_NAME" property="entityName" />
+        <result column="ACC_CODE" property="accCode" />
+        <result column="ACC_NAME" property="accName" />
+        <result column="CUSTOM_TYPE_CODE" property="customTypeCode" />
+        <result column="CUSTOM_CODE" property="customCode" />
+        <result column="CUSTOM_NAME" property="customName" />
+        <result column="YW_DETAIL" property="ywDetail" />
+        <result column="COA_BUS_CODE" property="coaBusCode" />
+        <result column="COA_BUS_NAME" property="coaBusName" />
+        <result column="COA_DEP_CODE" property="coaDepCode" />
+        <result column="COA_DEP_NAME" property="coaDepName" />
+        <result column="COA_PROJ_CODE" property="coaProjCode" />
+        <result column="COA_PROJ_NAME" property="coaProjName" />
+        <result column="CURRENCY" property="currency" />
+        <result column="INCOME_DATE" property="incomeDate" />
+        <result column="GL_DATE" property="glDate" />
+        <result column="MONTH_AMOUNT" property="monthAmount" />
+        <result column="ADJ_FLAG" property="adjFlag" />
+        <result column="CONTRACT_AMOUNT" property="contractAmount" />
+        <result column="CON_PERIOD" property="conPeriod" />
+        <result column="EXE_AMOUNT" property="exeAmount" />
+        <result column="ESTIMATE_REBATE" property="estimateRebate" />
+        <result column="PAYMENT_REBATE" property="paymentRebate" />
+        <result column="DIV_COST" property="divCost" />
+        <result column="DIV_REBATE" property="divRebate" />
+        <result column="MEMO" property="memo" />
+        <result column="VALUE1" property="value1" />
+        <result column="VALUE2" property="value2" />
+        <result column="VALUE3" property="value3" />
+        <result column="CREATION_DATE" property="creationDate" />
+        <result column="CREATED_BY" property="createdBy" />
+        <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+        <result column="LAST_UPDATE_DATE" property="lastUpdateDate" />
+        <result column="DATA_STATUS" property="dataStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        DATA_ID, SOURCE_CODE, SOURCE_NAME, GAAP_CODE, ENTITY_CODE, ENTITY_NAME, ACC_CODE, ACC_NAME, CUSTOM_TYPE_CODE, CUSTOM_CODE, CUSTOM_NAME, YW_DETAIL, COA_BUS_CODE, COA_BUS_NAME, COA_DEP_CODE, COA_DEP_NAME, COA_PROJ_CODE, COA_PROJ_NAME, CURRENCY, INCOME_DATE, GL_DATE, MONTH_AMOUNT, ADJ_FLAG, CONTRACT_AMOUNT, CON_PERIOD, EXE_AMOUNT, ESTIMATE_REBATE, PAYMENT_REBATE, DIV_COST, DIV_REBATE, MEMO, VALUE1, VALUE2, VALUE3, CREATION_DATE, CREATED_BY, LAST_UPDATED_BY, LAST_UPDATE_DATE, DATA_STATUS
+    </sql>
+    <select id="selectEntityName" resultType="com.momo.finance.entity.CuxAdvIncomeItfs">
+        select distinct ENTITY_NAME as entityName from CUX_ADV_INCOME_ITFS where ENTITY_NAME is not null and ENTITY_NAME !=''
+    </select>
+</mapper>
